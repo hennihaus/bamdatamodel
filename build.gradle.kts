@@ -86,6 +86,12 @@ koverMerged {
     }
 }
 
+val packageObjectMothers by tasks.registering(Jar::class) {
+    archiveClassifier.set("tests")
+    include("de/hennihaus/bamdatamodel/objectmothers/*")
+    from(sourceSets.test.get().output)
+}
+
 publishing {
     repositories {
         maven {
@@ -100,6 +106,7 @@ publishing {
     publications {
         register<MavenPublication>("bamdatamodel") {
             artifactId = "bamdatamodel"
+            artifact(packageObjectMothers)
             from(components["java"])
         }
     }
@@ -111,4 +118,8 @@ tasks.init {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.assemble {
+    dependsOn(packageObjectMothers)
 }
