@@ -112,3 +112,13 @@ tasks.init {
 tasks.test {
     useJUnitPlatform()
 }
+
+val packageObjectMothers by tasks.registering(Jar::class) {
+    archiveClassifier.set("tests")
+    include("de/hennihaus/bamdatamodel/objectmothers/*")
+    from(sourceSets.test.get().output)
+}
+
+tasks.assemble {
+    dependsOn(packageObjectMothers)
+}
