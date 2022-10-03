@@ -87,7 +87,7 @@ object BankObjectMother {
         teams = teams,
     )
 
-    private fun getDefaultTeams(): List<Team> = listOf(
+    fun getDefaultTeams(): List<Team> = listOf(
         getFirstTeam(),
         getSecondTeam(),
         getThirdTeam(),
