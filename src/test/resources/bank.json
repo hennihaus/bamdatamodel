@@ -2,7 +2,7 @@
   "uuid": "bf6981d4-0413-4767-8232-c7179b169bc7",
   "name": "Deutsche Bank",
   "jmsQueue": "deutschebank",
-  "thumbnailUrl": "http://localhost:8085/picture.jpg",
+  "thumbnailUrl": "http://0.0.0.0:8085/picture.jpg",
   "isAsync": false,
   "isActive": true,
   "creditConfiguration": {

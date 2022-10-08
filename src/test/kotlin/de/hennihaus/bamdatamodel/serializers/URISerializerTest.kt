@@ -15,19 +15,19 @@ class URISerializerTest {
 
     @Test
     fun `should deserialize an object with URI property correctly`() {
-        val testJson = """{"uri":"http://localhost:8080"}"""
+        val testJson = """{"uri":"http://0.0.0.0:8080"}"""
 
         val result: TestObject = Json.decodeFromString(string = testJson)
 
-        result shouldBe TestObject(uri = URI("http://localhost:8080"))
+        result shouldBe TestObject(uri = URI("http://0.0.0.0:8080"))
     }
 
     @Test
     fun `should serialize an object with URI property correctly`() {
-        val testObject = TestObject(uri = URI("http://localhost:8080"))
+        val testObject = TestObject(uri = URI("http://0.0.0.0:8080"))
 
         val result: String = Json.encodeToString(value = testObject)
 
-        result shouldBe """{"uri":"http://localhost:8080"}"""
+        result shouldBe """{"uri":"http://0.0.0.0:8080"}"""
     }
 }

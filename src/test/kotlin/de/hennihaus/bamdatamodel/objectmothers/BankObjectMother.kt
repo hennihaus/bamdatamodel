@@ -24,7 +24,7 @@ object BankObjectMother {
     const val SYNC_BANK_JMS_QUEUE = "deutschebank"
     const val ASYNC_BANK_JMS_QUEUE = "sparkasse"
 
-    const val DEFAULT_THUMBNAIL_URL = "http://localhost:8085/picture.jpg"
+    const val DEFAULT_THUMBNAIL_URL = "http://0.0.0.0:8085/picture.jpg"
     const val DEFAULT_IS_ACTIVE = true
 
     fun getSchufaBank(
