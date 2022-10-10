@@ -33,14 +33,15 @@ configurations.all {
 
 dependencies {
     val ktorVersion: String by project
-    val kotlinSerializationVersion: String by project
+    val jacksonVersion: String by project
     val kotestVersion: String by project
     val mockkVersion: String by project
     val junitVersion: String by project
 
     // productive plugins
     implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:$kotlinSerializationVersion")
+    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
 
     // test plugins
     testImplementation("io.mockk:mockk:$mockkVersion")

@@ -1,14 +1,13 @@
 package de.hennihaus.bamdatamodel
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
 import de.hennihaus.bamdatamodel.objectmothers.TeamObjectMother
 import de.hennihaus.bamdatamodel.testutils.getResourceAsText
 import io.kotest.assertions.json.NumberFormat
 import io.kotest.assertions.json.compareJsonOptions
 import io.kotest.assertions.json.shouldEqualJson
 import io.kotest.matchers.shouldBe
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Test
 
 class TeamTest {
@@ -17,7 +16,7 @@ class TeamTest {
     fun `should deserialize correctly json into team`() {
         val json = getResourceAsText(path = "/team.json")
 
-        val result: Team = Json.decodeFromString(string = json)
+        val result: Team = jacksonObjectMapper().readValue(content = json)
 
         result shouldBe TeamObjectMother.getFirstTeam()
     }
@@ -26,7 +25,7 @@ class TeamTest {
     fun `should serialize correctly a team into json`() {
         val team = TeamObjectMother.getFirstTeam()
 
-        val result: String = Json.encodeToString(value = team)
+        val result: String = jacksonObjectMapper().writeValueAsString(team)
 
         result.shouldEqualJson(
             expected = getResourceAsText(path = "/team.json"),
