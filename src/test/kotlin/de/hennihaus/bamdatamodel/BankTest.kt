@@ -1,14 +1,13 @@
 package de.hennihaus.bamdatamodel
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother
 import de.hennihaus.bamdatamodel.testutils.getResourceAsText
 import io.kotest.assertions.json.NumberFormat
 import io.kotest.assertions.json.compareJsonOptions
 import io.kotest.assertions.json.shouldEqualJson
 import io.kotest.matchers.shouldBe
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Test
 
 class BankTest {
@@ -17,7 +16,7 @@ class BankTest {
     fun `should deserialize correctly json into bank`() {
         val json = getResourceAsText(path = "/bank.json")
 
-        val result: Bank = Json.decodeFromString(string = json)
+        val result: Bank = jacksonObjectMapper().readValue(content = json)
 
         result shouldBe BankObjectMother.getSyncBank()
     }
@@ -26,7 +25,7 @@ class BankTest {
     fun `should serialize correctly a bank into json`() {
         val bank = BankObjectMother.getSyncBank()
 
-        val result: String = Json.encodeToString(value = bank)
+        val result: String = jacksonObjectMapper().writeValueAsString(bank)
 
         result.shouldEqualJson(
             expected = getResourceAsText(path = "/bank.json"),
