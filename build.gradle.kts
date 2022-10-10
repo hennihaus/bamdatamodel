@@ -6,7 +6,6 @@ plugins {
     kotlin("jvm")
     id("java-library")
     id("maven-publish")
-    id("org.jetbrains.kotlin.plugin.serialization")
     id("org.jlleitschuh.gradle.ktlint")
     id("org.jetbrains.kotlinx.kover")
     id("io.gitlab.arturbosch.detekt")
@@ -32,14 +31,12 @@ configurations.all {
 }
 
 dependencies {
-    val ktorVersion: String by project
     val jacksonVersion: String by project
     val kotestVersion: String by project
     val mockkVersion: String by project
     val junitVersion: String by project
 
     // productive plugins
-    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
     implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
 
