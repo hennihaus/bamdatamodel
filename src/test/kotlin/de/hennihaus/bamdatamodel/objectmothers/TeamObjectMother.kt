@@ -20,9 +20,9 @@ object TeamObjectMother {
     const val SECOND_TEAM_USERNAME = "Team02"
     const val THIRD_TEAM_USERNAME = "Team03"
 
-    const val FIRST_TEAM_JMS_QUEUE = "ResponseLoanBrokerTeam01"
-    const val SECOND_TEAM_JMS_QUEUE = "ResponseLoanBrokerTeam02"
-    const val THIRD_TEAM_JMS_QUEUE = "ResponseLoanBrokerTeam03"
+    const val FIRST_TEAM_JMS_QUEUE = "ResponseQueueTeam01"
+    const val SECOND_TEAM_JMS_QUEUE = "ResponseQueueTeam02"
+    const val THIRD_TEAM_JMS_QUEUE = "ResponseQueueTeam03"
 
     const val DEFAULT_PASSWORD = "lkhNqstcxs"
     const val DEFAULT_HAS_PASSED = false
