@@ -2,7 +2,7 @@
   "uuid": "63701a57-91b8-40d4-b4e2-b8dd9e7a75a5",
   "username": "Team01",
   "password": "lkhNqstcxs",
-  "jmsQueue": "ResponseLoanBrokerTeam01",
+  "jmsQueue": "ResponseQueueTeam01",
   "students": [
     {
       "uuid": "474e90cb-de6e-47f2-844a-44ea7dc09516",
