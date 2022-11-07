@@ -2,6 +2,7 @@ package de.hennihaus.bamdatamodel.objectmothers
 
 import de.hennihaus.bamdatamodel.Student
 import de.hennihaus.bamdatamodel.Team
+import de.hennihaus.bamdatamodel.TeamType
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.ASYNC_BANK_NAME
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.SCHUFA_BANK_NAME
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.SYNC_BANK_NAME
@@ -29,6 +30,7 @@ object TeamObjectMother {
 
     fun getFirstTeam(
         uuid: UUID = UUID.fromString(FIRST_TEAM_UUID),
+        type: TeamType = TeamType.REGULAR,
         username: String = FIRST_TEAM_USERNAME,
         password: String = DEFAULT_PASSWORD,
         jmsQueue: String = FIRST_TEAM_JMS_QUEUE,
@@ -37,6 +39,7 @@ object TeamObjectMother {
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
     ) = Team(
         uuid = uuid,
+        type = type,
         username = username,
         password = password,
         jmsQueue = jmsQueue,
@@ -47,6 +50,7 @@ object TeamObjectMother {
 
     fun getSecondTeam(
         uuid: UUID = UUID.fromString(SECOND_TEAM_UUID),
+        type: TeamType = TeamType.REGULAR,
         username: String = SECOND_TEAM_USERNAME,
         password: String = DEFAULT_PASSWORD,
         jmsQueue: String = SECOND_TEAM_JMS_QUEUE,
@@ -55,6 +59,7 @@ object TeamObjectMother {
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
     ) = Team(
         uuid = uuid,
+        type = type,
         username = username,
         password = password,
         jmsQueue = jmsQueue,
@@ -65,6 +70,7 @@ object TeamObjectMother {
 
     fun getThirdTeam(
         uuid: UUID = UUID.fromString(THIRD_TEAM_UUID),
+        type: TeamType = TeamType.REGULAR,
         username: String = THIRD_TEAM_USERNAME,
         password: String = DEFAULT_PASSWORD,
         jmsQueue: String = THIRD_TEAM_JMS_QUEUE,
@@ -73,6 +79,7 @@ object TeamObjectMother {
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
     ) = Team(
         uuid = uuid,
+        type = type,
         username = username,
         password = password,
         jmsQueue = jmsQueue,

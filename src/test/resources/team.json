@@ -1,5 +1,6 @@
 {
   "uuid": "63701a57-91b8-40d4-b4e2-b8dd9e7a75a5",
+  "type": "REGULAR",
   "username": "Team01",
   "password": "lkhNqstcxs",
   "jmsQueue": "ResponseQueueTeam01",

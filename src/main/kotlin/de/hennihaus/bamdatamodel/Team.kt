@@ -4,6 +4,7 @@ import java.util.UUID
 
 data class Team(
     val uuid: UUID,
+    val type: TeamType,
     val username: String,
     val password: String,
     val jmsQueue: String,
