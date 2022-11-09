@@ -2,11 +2,7 @@ package de.hennihaus.bamdatamodel.objectmothers
 
 import de.hennihaus.bamdatamodel.Bank
 import de.hennihaus.bamdatamodel.CreditConfiguration
-import de.hennihaus.bamdatamodel.Team
 import de.hennihaus.bamdatamodel.objectmothers.CreditConfigurationObjectMother.getCreditConfigurationWithNoEmptyFields
-import de.hennihaus.bamdatamodel.objectmothers.TeamObjectMother.getFirstTeam
-import de.hennihaus.bamdatamodel.objectmothers.TeamObjectMother.getSecondTeam
-import de.hennihaus.bamdatamodel.objectmothers.TeamObjectMother.getThirdTeam
 import java.net.URI
 import java.util.UUID
 
@@ -26,6 +22,7 @@ object BankObjectMother {
 
     const val DEFAULT_THUMBNAIL_URL = "http://0.0.0.0:8085/picture.jpg"
     const val DEFAULT_IS_ACTIVE = true
+    const val DEFAULT_TEAMS_COUNT = 3L
 
     fun getSchufaBank(
         uuid: UUID = UUID.fromString(SCHUFA_BANK_UUID),
@@ -35,7 +32,7 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = null,
-        teams: List<Team> = getDefaultTeams(),
+        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -44,7 +41,7 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teams = teams,
+        teamsCount = teamsCount,
     )
 
     fun getSyncBank(
@@ -55,7 +52,7 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        teams: List<Team> = getDefaultTeams(),
+        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -64,7 +61,7 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teams = teams,
+        teamsCount = teamsCount,
     )
 
     fun getAsyncBank(
@@ -75,7 +72,7 @@ object BankObjectMother {
         isAsync: Boolean = true,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        teams: List<Team> = getDefaultTeams(),
+        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -84,12 +81,6 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teams = teams,
-    )
-
-    fun getDefaultTeams(): List<Team> = listOf(
-        getFirstTeam(),
-        getSecondTeam(),
-        getThirdTeam(),
+        teamsCount = teamsCount,
     )
 }
