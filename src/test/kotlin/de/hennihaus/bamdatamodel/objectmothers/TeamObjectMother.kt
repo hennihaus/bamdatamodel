@@ -23,6 +23,8 @@ object TeamObjectMother {
     const val THIRD_TEAM_USERNAME = "Team03"
     const val EXAMPLE_TEAM_USERNAME = "Beispielteam"
 
+    const val EXAMPLE_TEAM_PASSWORD = "OOfKqWksmA"
+
     const val FIRST_TEAM_JMS_QUEUE = "ResponseQueueTeam01"
     const val SECOND_TEAM_JMS_QUEUE = "ResponseQueueTeam02"
     const val THIRD_TEAM_JMS_QUEUE = "ResponseQueueTeam03"
@@ -95,7 +97,7 @@ object TeamObjectMother {
         uuid: UUID = UUID.fromString(EXAMPLE_TEAM_UUID),
         type: TeamType = TeamType.EXAMPLE,
         username: String = EXAMPLE_TEAM_USERNAME,
-        password: String = DEFAULT_PASSWORD,
+        password: String = EXAMPLE_TEAM_PASSWORD,
         jmsQueue: String = EXAMPLE_TEAM_JMS_QUEUE,
         students: List<Student> = getDefaultStudents(),
         statistics: Map<String, Long> = getZeroStatistics(),
