@@ -12,6 +12,5 @@
     "maxTermInMonths": 36,
     "minSchufaRating": "A",
     "maxSchufaRating": "P"
-  },
-  "teamsCount": 3
+  }
 }

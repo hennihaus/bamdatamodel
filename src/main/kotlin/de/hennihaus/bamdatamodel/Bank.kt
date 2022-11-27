@@ -11,5 +11,4 @@ data class Bank(
     val isAsync: Boolean,
     val isActive: Boolean,
     val creditConfiguration: CreditConfiguration?,
-    val teamsCount: Long,
 )
