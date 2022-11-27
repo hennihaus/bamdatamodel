@@ -22,7 +22,6 @@ object BankObjectMother {
 
     const val DEFAULT_THUMBNAIL_URL = "http://0.0.0.0:8085/picture.jpg"
     const val DEFAULT_IS_ACTIVE = true
-    const val DEFAULT_TEAMS_COUNT = 3L
 
     fun getSchufaBank(
         uuid: UUID = UUID.fromString(SCHUFA_BANK_UUID),
@@ -32,7 +31,6 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = null,
-        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -41,7 +39,6 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teamsCount = teamsCount,
     )
 
     fun getSyncBank(
@@ -52,7 +49,6 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -61,7 +57,6 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teamsCount = teamsCount,
     )
 
     fun getAsyncBank(
@@ -72,7 +67,6 @@ object BankObjectMother {
         isAsync: Boolean = true,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        teamsCount: Long = DEFAULT_TEAMS_COUNT,
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -81,6 +75,5 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        teamsCount = teamsCount,
     )
 }
