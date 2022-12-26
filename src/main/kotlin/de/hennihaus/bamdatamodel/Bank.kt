@@ -1,6 +1,7 @@
 package de.hennihaus.bamdatamodel
 
 import java.net.URI
+import java.time.LocalDateTime
 import java.util.UUID
 
 data class Bank(
@@ -11,4 +12,5 @@ data class Bank(
     val isAsync: Boolean,
     val isActive: Boolean,
     val creditConfiguration: CreditConfiguration?,
+    val updatedAt: LocalDateTime,
 )

@@ -26,5 +26,7 @@
     "Deutsche Bank": 0,
     "Sparkasse": 0
   },
-  "hasPassed": false
+  "hasPassed": false,
+  "createdAt": "2022-12-26T08:49:22",
+  "updatedAt": "2022-12-26T08:49:22"
 }

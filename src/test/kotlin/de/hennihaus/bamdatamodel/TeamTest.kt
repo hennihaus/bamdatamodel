@@ -1,8 +1,8 @@
 package de.hennihaus.bamdatamodel
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import de.hennihaus.bamdatamodel.objectmothers.TeamObjectMother
+import de.hennihaus.bamdatamodel.testutils.bamObjectMapper
 import de.hennihaus.bamdatamodel.testutils.getResourceAsText
 import io.kotest.assertions.json.NumberFormat
 import io.kotest.assertions.json.compareJsonOptions
@@ -16,7 +16,7 @@ class TeamTest {
     fun `should deserialize correctly json into team`() {
         val json = getResourceAsText(path = "/team.json")
 
-        val result: Team = jacksonObjectMapper().readValue(content = json)
+        val result: Team = bamObjectMapper().readValue(content = json)
 
         result shouldBe TeamObjectMother.getFirstTeam()
     }
@@ -25,7 +25,7 @@ class TeamTest {
     fun `should serialize correctly a team into json`() {
         val team = TeamObjectMother.getFirstTeam()
 
-        val result: String = jacksonObjectMapper().writeValueAsString(team)
+        val result: String = bamObjectMapper().writeValueAsString(team)
 
         result.shouldEqualJson(
             expected = getResourceAsText(path = "/team.json"),
