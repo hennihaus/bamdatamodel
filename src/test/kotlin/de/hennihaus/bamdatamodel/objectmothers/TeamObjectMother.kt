@@ -6,9 +6,12 @@ import de.hennihaus.bamdatamodel.TeamType
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.ASYNC_BANK_NAME
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.SCHUFA_BANK_NAME
 import de.hennihaus.bamdatamodel.objectmothers.BankObjectMother.SYNC_BANK_NAME
+import de.hennihaus.bamdatamodel.objectmothers.DateTimeObjectMother.DEFAULT_LOCAL_DATE_TIME
 import de.hennihaus.bamdatamodel.objectmothers.StudentObjectMother.getFirstStudent
 import de.hennihaus.bamdatamodel.objectmothers.StudentObjectMother.getSecondStudent
 import de.hennihaus.bamdatamodel.objectmothers.StudentObjectMother.getThirdStudent
+import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 import java.util.UUID
 
 object TeamObjectMother {
@@ -42,6 +45,8 @@ object TeamObjectMother {
         students: List<Student> = getDefaultStudents(),
         statistics: Map<String, Long> = getZeroStatistics(),
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
+        createdAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
     ) = Team(
         uuid = uuid,
         type = type,
@@ -51,6 +56,8 @@ object TeamObjectMother {
         students = students,
         statistics = statistics,
         hasPassed = hasPassed,
+        createdAt = createdAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
     )
 
     fun getSecondTeam(
@@ -62,6 +69,8 @@ object TeamObjectMother {
         students: List<Student> = getDefaultStudents(),
         statistics: Map<String, Long> = getZeroStatistics(),
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
+        createdAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
     ) = Team(
         uuid = uuid,
         type = type,
@@ -71,6 +80,8 @@ object TeamObjectMother {
         students = students,
         statistics = statistics,
         hasPassed = hasPassed,
+        createdAt = createdAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
     )
 
     fun getThirdTeam(
@@ -82,6 +93,8 @@ object TeamObjectMother {
         students: List<Student> = getDefaultStudents(),
         statistics: Map<String, Long> = getZeroStatistics(),
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
+        createdAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
     ) = Team(
         uuid = uuid,
         type = type,
@@ -91,6 +104,8 @@ object TeamObjectMother {
         students = students,
         statistics = statistics,
         hasPassed = hasPassed,
+        createdAt = createdAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
     )
 
     fun getExampleTeam(
@@ -102,6 +117,8 @@ object TeamObjectMother {
         students: List<Student> = getDefaultStudents(),
         statistics: Map<String, Long> = getZeroStatistics(),
         hasPassed: Boolean = DEFAULT_HAS_PASSED,
+        createdAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
     ) = Team(
         uuid = uuid,
         type = type,
@@ -111,6 +128,8 @@ object TeamObjectMother {
         students = students,
         statistics = statistics,
         hasPassed = hasPassed,
+        createdAt = createdAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
     )
 
     fun getZeroStatistics(): Map<String, Long> = mapOf(

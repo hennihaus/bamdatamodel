@@ -1,5 +1,6 @@
 package de.hennihaus.bamdatamodel
 
+import java.time.LocalDateTime
 import java.util.UUID
 
 data class Team(
@@ -11,4 +12,6 @@ data class Team(
     val students: List<Student>,
     val statistics: Map<String, Long>,
     val hasPassed: Boolean,
+    val createdAt: LocalDateTime,
+    val updatedAt: LocalDateTime,
 )
