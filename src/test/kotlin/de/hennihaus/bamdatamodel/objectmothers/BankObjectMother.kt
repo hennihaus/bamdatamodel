@@ -3,10 +3,9 @@ package de.hennihaus.bamdatamodel.objectmothers
 import de.hennihaus.bamdatamodel.Bank
 import de.hennihaus.bamdatamodel.CreditConfiguration
 import de.hennihaus.bamdatamodel.objectmothers.CreditConfigurationObjectMother.getCreditConfigurationWithNoEmptyFields
-import de.hennihaus.bamdatamodel.objectmothers.DateTimeObjectMother.DEFAULT_LOCAL_DATE_TIME
+import de.hennihaus.bamdatamodel.objectmothers.DateTimeObjectMother.DEFAULT_OFFSET_DATE_TIME
 import java.net.URI
-import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
+import java.time.OffsetDateTime
 import java.util.UUID
 
 object BankObjectMother {
@@ -34,7 +33,7 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = null,
-        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: OffsetDateTime = OffsetDateTime.parse(DEFAULT_OFFSET_DATE_TIME),
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -43,7 +42,7 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt,
     )
 
     fun getSyncBank(
@@ -54,7 +53,7 @@ object BankObjectMother {
         isAsync: Boolean = false,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: OffsetDateTime = OffsetDateTime.parse(DEFAULT_OFFSET_DATE_TIME),
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -63,7 +62,7 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt,
     )
 
     fun getAsyncBank(
@@ -74,7 +73,7 @@ object BankObjectMother {
         isAsync: Boolean = true,
         isActive: Boolean = DEFAULT_IS_ACTIVE,
         creditConfiguration: CreditConfiguration? = getCreditConfigurationWithNoEmptyFields(),
-        updatedAt: LocalDateTime = LocalDateTime.parse(DEFAULT_LOCAL_DATE_TIME),
+        updatedAt: OffsetDateTime = OffsetDateTime.parse(DEFAULT_OFFSET_DATE_TIME),
     ) = Bank(
         uuid = uuid,
         jmsQueue = jmsQueue,
@@ -83,6 +82,6 @@ object BankObjectMother {
         isAsync = isAsync,
         isActive = isActive,
         creditConfiguration = creditConfiguration,
-        updatedAt = updatedAt.truncatedTo(ChronoUnit.SECONDS),
+        updatedAt = updatedAt,
     )
 }
